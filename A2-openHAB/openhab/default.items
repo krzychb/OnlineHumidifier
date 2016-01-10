@@ -1,0 +1,11 @@
+// Control of Humidifier Connected to a RC Socket
+// https://github.com/krzychb/OnlineHumidifier
+// Part A2 - openHAB
+//
+// place this file in "openhab/configuration/itmes" directory
+//
+
+Number Humidity			"Ambient Humidity [%.0f %%]"	<water>		{mqtt="<[test:krzychb/home/sensor/Humidity:state:default]"}
+Number HumiditySetPoint	"Humidity Setpoint [%.0f %%]"	<settings>	{mqtt="<[test:krzychb/home/hygrostat/HumiditySetPoint:state:default], >[test:krzychb/openhab/hygrostat/HumiditySetPoint:command:*:default]"}
+Switch Humidifer		"Humidifier"								{mqtt="<[test:krzychb/home/hygrostat/Humidifier:state:default], >[test:krzychb/openhab/hygrostat/Humidifier:command:*:default]"}
+Switch AutoMode			"Auto Mode"									{mqtt="<[test:krzychb/home/hygrostat/AutoMode:state:default], >[test:krzychb/openhab/hygrostat/AutoMode:command:*:default]"}
