@@ -5,7 +5,7 @@
 // place this file in "openhab/configuration/itmes" directory
 //
 
-Number Humidity			"Ambient Humidity [%.0f %%]"	<water>		{http="<[http://192.168.1.114/hygrostat:5000:REGEX(.*?Humidity: (.*?)%<br/>Setpoint.*)]"}
-Number HumiditySetPoint	"Humidity Setpoint [%.0f %%]"	<settings>	{http=">[*:GET:http://192.168.1.114:80/hygrostat?HumiditySetPoint=%2$s] <[http://192.168.1.114/hygrostat:5000:REGEX(.*?Setpoint: (.*?)%<br/>Humidifier.*)]"}
-Switch Humidifer		"Humidifier"								{http=">[*:GET:http://192.168.1.114:80/hygrostat?Humidifier=%2$s] <[http://192.168.1.114/hygrostat:5000:REGEX(.*?Humidifier: (.*?), switch .*)]"}
-Switch AutoMode			"Auto Mode"									{http=">[*:GET:http://192.168.1.114:80/hygrostat?AutoMode=%2$s] <[http://192.168.1.114/hygrostat:5000:REGEX(.*?Auto Mode: (.*?), turn .*)]"}
+Number Humidity			"Ambient Humidity [%.0f %%]"	<water>		{http="<[http://192.168.1.114/hygrostat:20000:REGEX(.*?Humidity: (.*?)%<br/>Setpoint.*)]"}
+Number HumiditySetPoint	"Humidity Setpoint [%.0f %%]"	<settings>	{http=">[*:GET:http://192.168.1.114/hygrostat?HumiditySetPoint=%2$s] <[http://192.168.1.114/hygrostat:20000:REGEX(.*?Setpoint: (.*?)%<form.*)]"}
+Switch Humidifer		"Humidifier"								{http=">[*:GET:http://192.168.1.114/hygrostat?Humidifier=%2$s] <[http://192.168.1.114/hygrostat:20000:REGEX(.*?Humidifier: (.*?), switch .*)]"}
+Switch AutoMode			"Auto Mode"									{http=">[*:GET:http://192.168.1.114/hygrostat?AutoMode=%2$s] <[http://192.168.1.114/hygrostat:20000:REGEX(.*?Auto Mode: (.*?), turn .*)]"}
