@@ -11,7 +11,7 @@ sitemap default label="Home"
 	{
 		Text item=Humidity
 		Setpoint item=HumiditySetPoint minValue=20 maxValue=80 step=1
-		Switch item=Humidifer
+		Switch item=Humidifier
 		Switch item=AutoMode
 	}
 }

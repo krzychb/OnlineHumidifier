@@ -82,7 +82,7 @@ Let us start with how to display information. For our project this file looks as
 ````
 Number Humidity			"Ambient Humidity [%.0f %%]"
 Number HumiditySetPoint	"Humidity Setpoint [%.0f %%]"
-Switch Humidifer 		"Humidifier"					
+Switch Humidifier 		"Humidifier"					
 Switch AutoMode 			"Auto Mode"
 ````
 You should be able to quickly relate above *items* to what you see on the control screen presented [earlier](#but-how-to-operate-humidifier-with-openhab) in this chapter. Each line starts with item type - in our case *Number* or *Switch*. Then comes the item name and text with description - in openHAB terms the *label text*. In two cases the *label text* includes square brackets with formatting how to display item value.
@@ -125,7 +125,7 @@ Besides switching humidifier on/off we need to read back information if humidifi
 Complete definition of an item to switch humidifier on/off, which will also read back humidifier on/off state, will look as follows:
 
 ```
-Switch Humidifer	"Humidifier"	{mqtt="<[test:krzychb/home/hygrostat/Humidifier:state:default], >[test:krzychb/openhab/hygrostat/Humidifier:command:*:default]"}
+Switch Humidifier	"Humidifier"	{mqtt="<[test:krzychb/home/hygrostat/Humidifier:state:default], >[test:krzychb/openhab/hygrostat/Humidifier:command:*:default]"}
 ```
 
 To distinguish outbound and inbound topics for the same variable, let us slightly modify inbound topic above by replacing *home* with *openhab*:
@@ -141,7 +141,7 @@ Complete *items* file for our humidity control looks as follows:
 ```
 Number Humidity			"Ambient Humidity [%.0f %%]"	<water>		{mqtt="<[test:krzychb/home/sensor/Humidity:state:default]"}
 Number HumiditySetPoint	"Humidity Setpoint [%.0f %%]"	<settings>	{mqtt="<[test:krzychb/home/hygrostat/HumiditySetPoint:state:default], >[test:krzychb/openhab/hygrostat/HumiditySetPoint:command:*:default]"}
-Switch Humidifer		"Humidifier"								{mqtt="<[test:krzychb/home/hygrostat/Humidifier:state:default], >[test:krzychb/openhab/hygrostat/Humidifier:command:*:default]"}
+Switch Humidifier		"Humidifier"								{mqtt="<[test:krzychb/home/hygrostat/Humidifier:state:default], >[test:krzychb/openhab/hygrostat/Humidifier:command:*:default]"}
 Switch AutoMode			"Auto Mode"									{mqtt="<[test:krzychb/home/hygrostat/AutoMode:state:default], >[test:krzychb/openhab/hygrostat/AutoMode:command:*:default]"}
 ```
 
@@ -167,13 +167,13 @@ sitemap default label="Home"
 	{
 		Text item=Humidity
 		Setpoint item=HumiditySetPoint minValue=20 maxValue=80 step=1
-		Switch item=Humidifer
+		Switch item=Humidifier
 		Switch item=AutoMode
 	}
 }
 ```
 
-You should quickly recognize the label “Home” which is the name of the screen displayed at the top. Then you will see a frame labelled “Humidifier”, that groups the four items we have defined previously and saved in [default.items](openhab/defalt.items) file.  Items *Humidity*, *Humidifer* and *AutoMode* are rendered using formatting defined in [default.itmes](openhab/default.itmes). ``` HumiditySetPoint``` is slightly modified by the sitemap. First, it is rendered as *Setpoint*, that means on the screen you will see additional signs - either +/- or ^/v to allow value adjustment. Second, the sitemap provides limits within which the value may be changed (in that case from 20 to 80), and the change step value (here the step is 1, and you can enter other values).
+You should quickly recognize the label “Home” which is the name of the screen displayed at the top. Then you will see a frame labelled “Humidifier”, that groups the four items we have defined previously and saved in [default.items](openhab/defalt.items) file.  Items *Humidity*, *Humidifier* and *AutoMode* are rendered using formatting defined in [default.itmes](openhab/default.itmes). ``` HumiditySetPoint``` is slightly modified by the sitemap. First, it is rendered as *Setpoint*, that means on the screen you will see additional signs - either +/- or ^/v to allow value adjustment. Second, the sitemap provides limits within which the value may be changed (in that case from 20 to 80), and the change step value (here the step is 1, and you can enter other values).
 
 Save this file in your *openhab/configurations/sitemaps* directory using name *default.sitemap* and you are done.
 
