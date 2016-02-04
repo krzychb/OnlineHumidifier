@@ -53,7 +53,7 @@ Depending on your experience, to make implementation easier, this project is bro
 
 * [**openHAB**](A2-openHAB) - control humidifier from your mobile device using [openHAB](http://www.openhab.org/). 
 
-* **HTTP** - interface ESP8266 and openHAB using HTTP binding. Is it a viable alternative to MQTT binding? (section in preparation)
+* [**HTTP**](A3-HTTP) - interface ESP8266 and openHAB using HTTP binding. Is it a viable alternative to MQTT binding?
 
 
 ## Contribute
