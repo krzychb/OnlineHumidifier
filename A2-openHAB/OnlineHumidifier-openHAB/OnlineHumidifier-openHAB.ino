@@ -93,7 +93,8 @@ void sendDataToEmoncms(void);
 // MQTT configuration
 //
 #include <PubSubClient.h>
-PubSubClient MQTTclient(client, "test.mosquitto.org");
+WiFiClient wclient;
+PubSubClient MQTTclient(wclient, "test.mosquitto.org");
 const char* MQTTclientName = "hygrostat";
 
 void MQTTcallback(const MQTT::Publish& pub)

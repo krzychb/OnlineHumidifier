@@ -137,11 +137,12 @@ void setupWebserver(void);
 
 Check if your updated sketch compiles without any errors and if it works exactly the same as the original sketch *OnlineHumidifier-Maintain.ino*. Once this is done you are ready to add MQTT routines.
 
-Open example sketch *mqtt_basic.ino* and start with copying MQTT file #includes and ``` PubSubClient ``` object declaration. Please note name changes to match ``` WiFiClient ``` in our original sketch, i.e. *client* has been changed to *MQTTclient* and *wclient* to *client*: 
+Open example sketch *mqtt_basic.ino* and start with copying MQTT file #includes and ``` PubSubClient ``` object declaration. Please note name changes to match ``` WiFiClient ``` in our original sketch, i.e. *client* has been changed to *MQTTclient*: 
 
 ```cpp
 #include <PubSubClient.h>
-PubSubClient MQTTclient(client, "test.mosquitto.org");
+WiFiClient wclient;
+PubSubClient MQTTclient(wclient, "test.mosquitto.org");
 ```
 
 As the second and last modification copy the code responsible for publishing the message, i.e.:

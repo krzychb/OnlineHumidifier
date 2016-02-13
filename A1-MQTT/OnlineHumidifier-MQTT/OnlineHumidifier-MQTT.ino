@@ -92,7 +92,8 @@ void sendDataToEmoncms(void);
 // MQTT configuration
 //
 #include <PubSubClient.h>
-PubSubClient MQTTclient(client, "test.mosquitto.org");
+WiFiClient wclient;
+PubSubClient MQTTclient(wclient, "test.mosquitto.org");
 
 
 void setup(void)

@@ -1,4 +1,4 @@
-ï»¿# HTTP
+# HTTP
 
 An openHAB binding alternative to MQTT
 
@@ -19,10 +19,10 @@ An openHAB binding alternative to MQTT
 
 ## Introduction
 
-OpenHAB is offering several ways of interfacing with IOT world. Just check the list of available [Bindings and Bundles](http://www.openhab.org/features/supported-technologies.html). Before switching to MQTT I have been using HTTP binding. I was just reluctant to go to MQTT because it required installation of additional s/w and learning a new protocol. In this chapter I would like to present how to use it instead of MQTT â€“ it is possible that you may still feel like me before :smile:
+OpenHAB is offering several ways of interfacing with IOT world. Just check the list of available [Bindings and Bundles](http://www.openhab.org/features/supported-technologies.html). Before switching to MQTT I have been using HTTP binding. I was just reluctant to go to MQTT because it required installation of additional s/w and learning a new protocol. In this chapter I would like to present how to use it instead of MQTT – it is possible that you may still feel like me before :smile:
 HTTP binding is simpler to implement and offers direct connection to IOT devices as opposed to MQTT that brings a broker in between. On the other hand MQTT provides lightweight protocol and more convenient way to exchange information between any of connected devices. 
 
-Reading this chapter you will have opportunity to check it out using exactly the same h/w and s/w as before. It should be quick and easy job as we will be building on experience gathered going through [previous chapters](../readme.md#step-by-step-tutorial) of this repository. I think that HTTP binding is worth exploring â€“ you will assess and judge by yourself the cons and pros against MQTT binding.
+Reading this chapter you will have opportunity to check it out using exactly the same h/w and s/w as before. It should be quick and easy job as we will be building on experience gathered going through [previous chapters](../readme.md#step-by-step-tutorial) of this repository. I think that HTTP binding is worth exploring – you will assess and judge by yourself the cons and pros against MQTT binding.
 
 
 ## Ground Work
@@ -171,7 +171,7 @@ The only new concept in this function, comparing to its original version, is HTM
 
 ## Sketch Upload and Test
 
-That completes the key changes to the sketch. Now what you need to do, is removing all the MQTT code that is not required anymore. You can also remove three ``` server.on("/humidifier/â€¦ ``` functions. Once done, upload and test the code to check if you can operate all hygrostat functions from the web page.  Open [external serial terminal](https://github.com/esp8266/Arduino/blob/master/doc/ota_updates/ota_updates.md#troubleshooting) to see diagnostic log when checking each function. Final application contains some extra debugging messages printed out over a serial port to help with diagnostics. It is available in this repository saved under [OnlineHumidifier-HTTP.ino](../A3-HTTP/OnlineHumidifier-HTTP). 
+That completes the key changes to the sketch. Now what you need to do, is removing all the MQTT code that is not required anymore. You can also remove three ``` server.on("/humidifier/… ``` functions. Once done, upload and test the code to check if you can operate all hygrostat functions from the web page.  Open [external serial terminal](https://github.com/esp8266/Arduino/blob/master/doc/ota_updates/ota_updates.md#troubleshooting) to see diagnostic log when checking each function. Final application contains some extra debugging messages printed out over a serial port to help with diagnostics. It is available in this repository saved under [OnlineHumidifier-HTTP.ino](../A3-HTTP/OnlineHumidifier-HTTP). 
 
 Now you can move to configuration of openHAB that is rather straightforward.
 
@@ -240,7 +240,7 @@ Now review the same HTML code on picture below against regular expression in tab
 
 ![Sample GET URL](pictures/information-to-extract-from-html.png)
 
-I believe you got an idea what regular expressions are about. To go a little more into details I recommend checking [this nice interactive tutorial](http://regexone.com/). You will be able to enter your own regular expressions and instantly check how they work. Do not wait, check it out â€“ learning regular expression using this tutorial is fun!
+I believe you got an idea what regular expressions are about. To go a little more into details I recommend checking [this nice interactive tutorial](http://regexone.com/). You will be able to enter your own regular expressions and instantly check how they work. Do not wait, check it out – learning regular expression using this tutorial is fun!
 
 That is all you need to get HTTP binding to work for you. Please see below complete [default.items](openhab/default.items) configuration file. 
 
@@ -256,12 +256,12 @@ Again remember to replace ``` 192.168.1.114 ``` with the IP address of your modu
 
 ## Check it in Action
 
-After uploading openHAB configuration, you are finally ready to check it in action with [OnlineHumidifier-HTTP.ino](../A3-HTTP/OnlineHumidifier-HTTP) sketch. Go ahead, open the web page served by ESP module as well as openHAB user interface side by side like shown in chapter [Ground Work](#ground-work). Then operate hygrostat from openHAB. You should see all the changes reflected on ESP web page and vice versa. In case of issues do the troubleshooting using [external serial terminal](https://github.com/esp8266/Arduino/blob/master/doc/ota_updates/ota_updates.md#troubleshooting)  together with openHABâ€™s OSGI-Console as discussed in [previous section](../A2-openHAB#troubleshooting).
+After uploading openHAB configuration, you are finally ready to check it in action with [OnlineHumidifier-HTTP.ino](../A3-HTTP/OnlineHumidifier-HTTP) sketch. Go ahead, open the web page served by ESP module as well as openHAB user interface side by side like shown in chapter [Ground Work](#ground-work). Then operate hygrostat from openHAB. You should see all the changes reflected on ESP web page and vice versa. In case of issues do the troubleshooting using [external serial terminal](https://github.com/esp8266/Arduino/blob/master/doc/ota_updates/ota_updates.md#troubleshooting)  together with openHAB’s OSGI-Console as discussed in [previous section](../A2-openHAB#troubleshooting).
 
 
 ## Conclusion
 
-You had a chance to compare functionality and ease of use of HTTP binding and MQTT bindings to decide which one better suit your needs.
+You had a chance to compare functionality and ease of use of HTTP and MQTT bindings to decide which one better suit your needs.
 
 I believe HTTP binding is a good solution for small IOT networks that consist of couple of devices. For bigger networks it is worth to invest extra effort to setting up MQTT broker and developing of structure of topics to quickly get to specific data. In return, network maintenance and expansion with new devices or type of transmitted information should be easier. Other cons and pros of MQTT and HTTP binding depend on how the data is exchanged between devices. Whether we prefer to ask each time for specific data when needed. Or rather we are just collecting data from numerous devices and prefer to subscribe to specific topics and wait until update arrives.
 
