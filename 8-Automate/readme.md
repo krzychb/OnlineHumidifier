@@ -11,7 +11,7 @@ The dead band range above and below the set point is called hysteresis. An autom
 
 * [The Hysteresis Controller](#the-hysteresis-controller)
 * [What Else?](#what-else)
-* [Let'u Get it Work](#lets-us-get-it-eork)
+* [Let's Get it Work](#lets-get-it-work)
 * [Auto Mode On](#auto-mode-on)
 * [How does it Perform?](#how-does-it-perform)
 * [Next Step](#next-step)

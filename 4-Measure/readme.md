@@ -6,7 +6,7 @@ In previous section we have [setup Arduino IDE for ESP8266 programming](../3-Set
 ## Table of Contents
 
 * [What You Need](#what-you-need)
-* [Hardware Setup – the Breadboard Time](#hardware-setup-–-the-breadboard-time)
+* [Hardware Setup – the Breadboard Time](#hardware-setup--the-breadboard-time)
 * [Software Setup](#software-setup)
 * [Next Step](#next-step)
 

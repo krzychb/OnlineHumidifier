@@ -13,7 +13,7 @@ Let us get started!
 
 * [What You Need](#what-you-need)
 * [Setup Web Server](#setup-web-server)
-* [Test It](#test-tt)
+* [Test It](#test-it)
 * [Next Step](#next-step)
 
 

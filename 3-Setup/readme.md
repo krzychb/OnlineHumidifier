@@ -10,7 +10,7 @@ Programming of ESP8266 SoC microcontroller with Arduino IDE is really straightfo
 * [Hook up Your ESP Module](#hook-up-your-esp-module)
 * [Upload Example Sketch](#upload-example-sketch)
 * [Tweaking Your Sketch](#tweaking-your-sketch)
-* [What Do We Do Next?](#what-do-we-do-next?)
+* [What Do We Do Next?](#what-do-we-do-next)
 
 
 ## What You Need
