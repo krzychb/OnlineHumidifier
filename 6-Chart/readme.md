@@ -7,6 +7,17 @@ In this section I would like to make another step - push data to the cloud and p
 ![A sample humidity control chart](pictures/humidity-control-chart-1.png)
 
 
+## Table of Contents
+
+* [Emoncms](#emoncms)
+* [Setup](#setup)
+* [Push](#push)
+* [Visualize](#visualize)
+* [Save](#save)
+* [Chart](#chart)
+* [Next Steps](#next-steps)
+
+
 ## Emoncms
 
 There are several cloud services that you can use for such purpose. I am pretty familiar with [ThingSpeak](https://thingspeak.com/) and [Emoncms](http://emoncms.org/) and will refer to them.
@@ -95,7 +106,7 @@ This code opens a new client connection to Emoncms server, sends JSON command, s
 
 To make this code work we need to declare global variable ``` humidity```, ``` dht ``` and ``` client ``` objects as well provide API key for writing data. 
 
-A copy of complete sketch is saved as [OnlineHumidifier-Graph](OnlineHumidifier-Graph/) and consists of three files that contain individual parts of code – initialization, ``` setup() ``` & ``` loop() ```, humidity measurement and sending data to Emoncms. Such code “modularity” will make it easier to follow and understand growing code as we will be adding couple of new functionalities.
+A copy of complete sketch is saved as [OnlineHumidifier-Graph](OnlineHumidifier-Graph/) and consists of three files that contain individual parts of code – initialization, ``` setup() ``` & ``` loop() ```, humidity measurement and sending data to Emoncms. Such code “modularity” will make it easier to follow and understand growing code as we will be adding some more new functionality.
 
 
 ## Visualize
@@ -106,7 +117,7 @@ Once you upload and run this sketch, go to [Inputs](http://emoncms.org/input/vie
 
 In case of issues check on Serial Monitor what messages are shown – especially what is the reply from Emoncms after JSON command is sent. If command is properly formatted and includes a valid API key, the reply will be just ``` ok ```. Otherwise you should see specific error codes. A handy way to you can troubleshoot is to prepare JSON command in text editor, paste it to a web browser and check what reply is returned. 
 
-If JSON string is correctly formated, then you should see response as below:
+If JSON string is correctly formatted, then you should see response as below:
 
 ![JSON string phrased correctly](pictures/JSON-returned-ok.png)
 
@@ -147,7 +158,7 @@ Go ahead and experiment with various visualizations, widgets, containers and tex
 
 Once you get comfortable with your new sketch and Emoncms, make some improvements by sending more than just a single name:value pair at a time. For example an instruction like ```{Humidity:43.5, Temperature:22.3}```  will send to Emoncms two variables, first named ``` Humidity ``` with value  of ``` 43.5 ``` and second named ``` Temperature ``` with value of ``` 22.3 ```. Then practice putting both variables on a single chart. To do so use *multigraph* type chart from *Visualizations*.
 
-This concludes my instructions how to send data to Emoncms and show them on a chart. In next section [Control](../7-Control) I will show you how to switch humidifier on and off remotely. With this functionality in place we will be just a step achead from getting our humidifier automatically controlling humidity! 
+This concludes my instructions how to send data to Emoncms and show them on a chart. In next section [Control](../7-Control) I will show you how to switch humidifier on and off remotely. With this functionality in place we will be just a step ahead from getting our humidifier automatically controlling humidity! 
 
 Stick with me – this will be fun!
 

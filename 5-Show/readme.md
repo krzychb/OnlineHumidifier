@@ -9,7 +9,15 @@ Such functionality is also fairly easy to complete. There is an example sketch a
 Let us get started!
 
 
-# What You Need
+## Table of Contents
+
+* [What You Need](#what-you-need)
+* [Setup Web Server](#setup-web-server)
+* [Test It](#test-tt)
+* [Next Step](#next-step)
+
+
+## What You Need
 
 To implement this part of project you will need the following:
 
@@ -18,6 +26,9 @@ To implement this part of project you will need the following:
   * ESP module
   * DHT22 sensor on breadboard
 * Wi-Fi access for PC and ESP module to the same network
+
+
+## Setup Web Server
 
 Start by going to File > Examples > ESP8266WebServer and opening HelloServer.ino sketch.
 
@@ -60,6 +71,9 @@ dht.begin();
 ```
 
 To follow exactly how the code was modified please check [OnlineHumidifier-Show.ino]( OnlineHumidifier-Show/OnlineHumidifier-Show.ino) sketch in this repository. 
+
+
+## Test It
 
 After uploading updated sketch we will be able to see current humidity value each time we open IP address of our ESP in a web browser.
 

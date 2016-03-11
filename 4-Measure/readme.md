@@ -1,5 +1,14 @@
 # Measure
+
 In previous section we have [setup Arduino IDE for ESP8266 programming](../3-Setup). Now we are ready to connect humidity sensor to our ESP and make some humidity measurements. 
+
+
+## Table of Contents
+
+* [What You Need](#what-you-need)
+* [Hardware Setup – the Breadboard Time](#hardware-setup-–-the-breadboard-time)
+* [Software Setup](#software-setup)
+* [Next Step](#next-step)
 
 
 ## What You Need
@@ -13,6 +22,7 @@ In previous section we have [setup Arduino IDE for ESP8266 programming](../3-Set
 For additional details please refer to section [Components](../2-Components)
 
 ## Hardware Setup – the Breadboard Time
+
 First please connect DHT22 sensor, resistor and ESP module as shown on [schematics](esp8266-dht22.fzz) below.
 
 ![Hardware setup schematics](pictures/esp8266-dht22-breadbord.png)
@@ -23,7 +33,7 @@ As you may notice we are connecting 3.3V and GND taken from ESP to first and for
 
 ## Software Setup
 
-Once hardware connections are ready let us prepare the software. I have mentioned that ESP is communication with DHT22 sensor over a custom protocol.  This protocol has been already implemented for Arduino in a [DHT sensor library](https://github.com/adafruit/DHT-sensor-library) that we can use instead of writing it by ourselves. To do so we first need to install it. Go to Sketch > Include Library > Manage Libraries… and type “DHT” in search box. Pick “DHT sensor library” and install it. 
+Once hardware connections are ready let us prepare the software. I have mentioned that ESP is communication with DHT22 sensor over a custom protocol.  This protocol has been already implemented for Arduino in a [DHT sensor library](https://github.com/adafruit/DHT-sensor-library) that we can use instead of writing it by ourselves. To do so we first need to install it. Go to Sketch > Include Library > Manage Libraries... and type “DHT” in search box. Pick “DHT sensor library” and install it. 
 
 ![DHT library selection](pictures/dht-library-selection.png)
 
@@ -43,7 +53,7 @@ In the sketch the baud rate it is setup to 9600 bits per second. Check if the sa
 
 ![Serial Monitor output – sensor read successful](pictures/DHTtester-ino-serial-output-success.png)
 
-You will still see some garbage characters just after reset. This is normal behaviour as initially module outputs data on serial at 74880 bits per second. Then it is switched to 9600 rate as instructed by the following command:
+You will still see some garbage characters just after reset. This is normal behavior as initially module outputs data on serial at 74880 bits per second. Then it is switched to 9600 rate as instructed by the following command:
 
 ```cpp
 Serial.begin(9600) 
@@ -67,5 +77,5 @@ Please see below the hardware setup used for preparation of this tutorial.
 
 ## Next Step
 
-Now you know to use ESP8266 to measure humidity. With no effort at all, using the same DHT sesor you can also measure temperature. In section [Show](../5-Show) I will describe how to display current measurements on-line in a web browser. 
+Now you know to use ESP8266 to measure humidity. With no effort at all, using the same DHT sensor you can also measure temperature. In section [Show](../5-Show) I will describe how to display current measurements on-line in a web browser. 
 

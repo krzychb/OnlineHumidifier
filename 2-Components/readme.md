@@ -1,12 +1,26 @@
 # Components
 
+What kind of hardware and software you need.
+
+## Table of Contents
+
+* [Hardware](#hardware)
+  * [Humidifier and RC Socket](#humidifier-and-rc-socket)
+  * [Microcontroller and I/O](#microcontroller-and-io)
+  * [Miscellaneous](#miscellaneous)
+  * [Hardware Bill of Materials](#hardware-bill-of-materials)
+  * [Other Hardware Options](#other-hardware-options)
+* [Software](#software)
+  * [Software Bill of Materials](#software-bill-of-materials)
+* [I have all Required Components - What Next?](#i-have-all-required-components---what-next)
+
 
 ## Hardware
 
 
 ### Humidifier and RC Socket
 
-To build this project you need a humidifier. Look for simple one with manual control and big enough water container suitable for the size of your flat. Mine has 4.2 l (0.9 gal) container and is rated for 17 m2 (183 sq. ft) room. Basing on my experience, if you run it at maximum output, it will easy cover 2 – 3 x larger area of a typical 2.7 m (8.9 ft) high flat.  If you set it at maximum, you may need to place it on a chair or a table so mist is able to disperse before wetting the floor.
+To build this project you need a humidifier. Look for simple one with manual control and big enough water container suitable for the size of your flat. Mine has 4.2 l (0.9 gal) container and is rated for 17 m2 (183 sq. ft) room. Basing on my experience, if you run it at most output, it will easy cover 2 – 3 x larger area of a typical 2.7 m (8.9 ft) high flat.  But if you set it at maximum, you may need to place it on a chair or a table so mist is able to disperse before wetting the floor.
 
 You need to be able to switch humidifier remotely on and off depending on ambient humidity. I decided to use RC socket for this purpose. This is safe, simple and cheap solution. Such sockets are around for several years, easy to buy and control. I recommend one with LED to see instantly if it is on or off. 
 
@@ -39,7 +53,7 @@ You will also need some minor stuff like jumpers or breadboard and I will discus
 ![Breadboard and Jumpers](pictures/Breadboard-and-jumpers.jpg)
 
 
-### Hardware Bill od Materials
+### Hardware Bill of Materials
 
 Here are exact models I am using.
 
@@ -54,7 +68,7 @@ To buy humidifier and RC socket go to your local store with electric household a
 Remaining three components: ESP8266, humidity sensor and radio transmitter you can easy buy on-line. 
 
 
-## Other Hardware Options
+### Other Hardware Options
 
 You may consider reduction of number of hardware components by using an ESP8266 relay board like below:
 
@@ -82,7 +96,7 @@ We will build this project using open source software - primarily Arduino IDE an
 Besides that we will also need Arduino libraries for humidity sensor and RF transmitter.
 
 
-### Software Bill od Materials
+### Software Bill of Materials
 
 Below are the links to the software we need:
 * Arduino IDE - https://www.arduino.cc/

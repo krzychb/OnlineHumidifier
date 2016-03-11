@@ -7,6 +7,15 @@ If you have been working with Arduino UNO board before, you may noticed that com
 There are three basic options to perform OTA uploads and they are discussed in in details in [documentation](https://github.com/esp8266/Arduino/blob/master/doc/ota_updates/ota_updates.md#introduction) of [esp8266/Arduino] (https://github.com/esp8266/Arduino) repository. Out of these options I would like to implement uploads directly from [Arduino IDE] (https://github.com/esp8266/Arduino/blob/master/doc/ota_updates/ota_updates.md#arduino-ide).
 
 
+## Table of Contents
+
+* [Preparation](#preparation)
+* [Update the Sketch](#update-the-sketch)
+* [Make First Upload](#make-First-upload)
+* [Make Next Uploads Faster](#make-next-uploads-faster)
+* [Conclusion](#conclusion)
+
+
 ## Preparation
 
 To start with please check documentation what are the [basic requirements](https://github.com/esp8266/Arduino/blob/master/doc/ota_updates/ota_updates.md#basic-requirements) for performing OTA. If the module you are using meets these requirements then go to the next step. 

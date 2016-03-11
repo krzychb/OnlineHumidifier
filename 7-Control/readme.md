@@ -1,11 +1,24 @@
 # Control
 
-In [previous section](../6-Chart) I have presented how to show your measurements online using Emoncms.org that is powerful web application for logging and visualising data. We need such data for analysis of performance of our humidity control system. We do not have this system operating yet, but we are just there. In this section I would find a demonstrate how to control our humidifier, so we can then remotely switch it on and off depending on current humidity value. 
+In [previous section](../6-Chart) I have presented how to show your measurements online using Emoncms.org that is powerful web application for logging and visualizing data. We need such data for analysis of performance of our humidity control system. We do not have this system operating yet, but we are just there. In this section I would find a demonstrate how to control our humidifier, so we can then remotely switch it on and off depending on current humidity value. 
 
 To do so you will need the following hardware used in section [Measure](../4-Measure/) and in addition:
 
 * RF433 transmitter
 * RF433 socket
+
+
+## Table of Contents
+
+* [Select RF Socket](#select-rf-socket)
+* [Install Library](#install-library)
+* [Connect Components](#connect-components)
+* [Prepare the Sketch](#prepare-the-sketch)
+* [Configure the Transmitter](#configure-the-transmitter)
+* [Operate the Socket](#operate-the-socket)
+* [Troubleshooting](#troubleshooting)
+* [Operate the Socket from Web Browser](#operate-the-socket-from-web-browser)
+* [The Next Step - Put it All Together](#the-next-step---put-it-all-together)
 
 
 ## Select RF Socket
@@ -35,7 +48,7 @@ To begin with we need to hook up RF433 transmitter to ESP8266 module. The transm
 
 ![RF Transmitter](pictures/rf-transmitter-pinout.jpg)
 
-Please see below connection diagram. Transmission modulation is done using D1 digital I/O pin. You may select any other available I/O pin. As for power supply I am using 3.3V avialable on-board. If you have NodeMCU 1.0 LoLin, you can use 5V instead to provide stronger RF signal and better range. 5V is boken out on this board as *VV* under pin that on other NodeMCU 1.0 boards (like Amica) is marked as *RSV*.
+Please see below connection diagram. Transmission modulation is done using D1 digital I/O pin. You may select any other available I/O pin. As for power supply I am using 3.3V available on-board. If you have NodeMCU 1.0 LoLin, you can use 5V instead to provide stronger RF signal and better range. 5V is broken out on this board as *VV* under pin that on other NodeMCU 1.0 boards (like Amica) is marked as *RSV*.
 
 ![Breadboard connection schematic of RF433 transmitter and DHT22 to ESP8266](pictures/esp8266-dht22-rf433-breadboard.png)
 ![Connection schematic of RF433 transmitter and DHT22 to ESP8266](pictures/esp8266-dht22-rf433-schematic.png)
@@ -79,7 +92,7 @@ The key command to operate socket is ``` actionTransmitter.sendSignal(1, 'A', ou
 2.	*device* :	Device to switch. Range: ``` [A..E] ``` (case sensitive!)
 3.	*on* : ``` True ```, to switch on. ``` False ``` to switch off
 
-Selection of *systemCode* and *device* for ORNO socket is done using dip switches. Plese see picture below of setting the *systemCode = 1* on remote control and both *systemCode = 1*  as well as *device = A* on the socket.
+Selection of *systemCode* and *device* for ORNO socket is done using dip switches. Please see picture below of setting the *systemCode = 1* on remote control and both *systemCode = 1*  as well as *device = A* on the socket.
 
 ![Example of DIP switch settings on RF433 remote control and socket](pictures/rf433-orno-dip-switches.png)
 
@@ -127,7 +140,7 @@ server.on("/inline", [](){
 });
 ```
 
-Now load this skech, enter IP address of ESP schown in Serial Monitor and add ``` /inline ``` at the end (if IP of you ESP is ``` 192.168.1.120 ```, then the whole url will look like ``` http://192.168.1.120/inline ```). Once entered you should see the following output.
+Now load this sketch, enter IP address of ESP shown in Serial Monitor and add ``` /inline ``` at the end (if IP of you ESP is ``` 192.168.1.120 ```, then the whole url will look like ``` http://192.168.1.120/inline ```). Once entered you should see the following output.
 
 ![Another address and output in web browser](pictures/web-browser-inline.png)
 
@@ -176,13 +189,13 @@ void showControlScreen(void){
 
 This procedure is using global variables that contain ambient humidity and humidifier status. The statement ``` 'refresh' content='5' ``` will cause the page to reload itself every 5 seconds, so we can see humidity value changes. 
 
-The  HTML code to render a link looks as follows ``` <a href="/humidifier/1">On</a> ```. Corresponding statement in Arduino code should contain additinal escape character ``` \ ``` before each quotatiion mark like this -``` \" ```. This is to distinguish it from quotation mark that means begining or end of a string.
+The  HTML code to render a link looks as follows ``` <a href="/humidifier/1">On</a> ```. Corresponding statement in Arduino code should contain additional escape character ``` \ ``` before each quotation mark like this -``` \" ```. This is to distinguish it from quotation mark that means beginning or end of a string.
 
 Complete sketch is saved as [OnlineHumidifier-Control](OnlineHumidifier-Control/). If you compile it, upload and open ``` http://192.168.1.120/humidifier/0 ``` (do not forget to replace ``` 192.168.1.120 ``` with IP of your ESP!) the following will be displayed in web browser:
 
 ![Humidifier control screen](pictures/web-browser-humidifier-control-screen.png)
 
-I encourage you to improve this sketch by changing the font, adding graphics, alter colours of displayed information basing on humidifier status or humidity range, show % of the time when humidifier was on, etc.
+I encourage you to improve this sketch by changing the font, adding graphics, alter colors of displayed information basing on humidifier status or humidity range, show % of the time when humidifier was on, etc.
 
 
 ## The Next Step - Put it All Together

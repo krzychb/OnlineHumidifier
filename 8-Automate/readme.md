@@ -7,6 +7,16 @@ Before you rush to write this procedure think about humidifier being constantly 
 The dead band range above and below the set point is called hysteresis. An automatic controller that is working as desribed above is called [bang–bang controler](https://en.wikipedia.org/wiki/Bang%E2%80%93bang_control) or hysteresis controller.
 
 
+## Table of Contents
+
+* [The Hysteresis Controller](#the-hysteresis-controller)
+* [What Else?](#what-else)
+* [Let'u Get it Work](#lets-us-get-it-eork)
+* [Auto Mode On](#auto-mode-on)
+* [How does it Perform?](#how-does-it-perform)
+* [Next Step](#next-step)
+
+
 ## The Hysteresis Controller
 
 You can experiment what will happen if you have no hysteresis or if you set it to specific value. At this stage, as a starting point, let us assume a hysteresis of +/- 2% RH.  Below is a procedure that implements hysteresis controller:
@@ -18,23 +28,23 @@ void executeHumidityControl(void)
   Serial.print(humidity, 1);
   Serial.print("%, set point : ");
   Serial.print(humiditySetPoint, 1);
-  Serial.print("%, humidifyer : ");
+  Serial.print("%, humidifier : ");
   if (humidity > humiditySetPoint + 2)
   {
     // ambient humidity is above the set point
-    // action : switch humidifyer Off
+    // action : switch humidifier Off
     humidifier = LOW;
   }
   else if (humidity < humiditySetPoint - 2)
   {
     // ambient humidity is below the set point
-    // action : switch humidifyer On
+    // action : switch humidifier On
     humidifier = HIGH;
   }
   else
   {
     // ambient humidity is within +/- 2% hysteresis
-    // therefore do not alter curent status of humidifyer
+    // therefore do not alter current status of humidifier
     Serial.print("(No Change) ");
   }
   Serial.println(humidifier == HIGH ? "On" : "Off");
@@ -46,18 +56,18 @@ void executeHumidityControl(void)
 }
 ```
 
-## What Else
+## What Else?
 
 We will finally put into operation the last piece of hardware described under [Components](../2-Components), that has not been used so far – the humidifier.  It will act as the final element  of our [control system](https://en.wikipedia.org/wiki/Control_system).
 
 Besides that you will need all the other components used and tested previously.
 
-Speaking in terms of [control system](https://en.wikipedia.org/wiki/Control_system), they will act as controller (ESP8266 running the sketch), the input sensor (DHT22) and the output actuator (RF transmitter togehter with RF socket).
+Speaking in terms of [control system](https://en.wikipedia.org/wiki/Control_system), they will act as controller (ESP8266 running the sketch), the input sensor (DHT22) and the output actuator (RF transmitter together with RF socket).
 
 As the [HMI - Human Machine Interface](https://en.wikipedia.org/wiki/User_interface) we will use a web browser on a PC.
 
 
-## Let us Get it Work
+## Let's Get it Work
 
 To start with, open previously prepared [OnlineHumidifier-Control](../7-Control/OnlineHumidifier-Control/) sketch and save it as *OnlineHumidifier-Automate.ino*. Then copy the above code of [hysteresis controller](#the-hysteresis-controller) and add it to the sketch as a separate*Control.ino* file.
 
@@ -101,7 +111,7 @@ void showControlScreen(void) {
 }
 ```
 
-You will also need to update the ``` loop() ``` to periodically measure humidity, execute control once it isput into auto mode and send data to Emoncms.org:
+You will also need to update the ``` loop() ``` to periodically measure humidity, execute control once it is put into auto mode and send data to Emoncms.org:
 
 ```cpp
 void loop(void)
@@ -145,7 +155,7 @@ void sendDataToEmoncms(void)
 }
 ```
 
-You will need to do some additional minor updates like declaration and initializations of new variables and switching the auto mode off if you decide to operate the humidifier manually. For details please refer to complete code in [OnlineHumidifier-Automate](OnlineHumidifier-Automate) folder.
+You will need to do some additional minor updates like declaration and initialization of new variables and switching the auto mode off if you decide to operate the humidifier manually. For details please refer to complete code in [OnlineHumidifier-Automate](OnlineHumidifier-Automate) folder.
 
 
 ## Auto Mode On
@@ -175,7 +185,7 @@ Add *MultiGraph* charts under [Dashboards](http://emoncms.org/dashboard/list)
 
 After completion of the above steps leave your control system running in auto mode for couple of hours. This is to collect data for analysis of performance of your humidity control system. Once you have the data, start tweaking the system and observing how this affects quality of humidity control.
 
-This is fun to observe how control system copes with random disturbances (caused by e.g. opening a window, boilng water in kitechn or washing) and trying to get humidity back to the set point. You may improve time to get humidity back on target by changing hysteresis, output of humidifier, location of humidity sensor and data sampling period.
+This is fun to observe how control system copes with random disturbances (caused by e.g. opening a window, boiling water in kitchen or washing) and trying to get humidity back to the set point. You may improve time to get humidity back on target by changing hysteresis, output of humidifier, location of humidity sensor and data sampling period.
 
 Consider changing one parameters at a time then collecting data for couple of hours and checking results before moving to next parameter.
 

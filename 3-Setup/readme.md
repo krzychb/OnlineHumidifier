@@ -1,6 +1,16 @@
-#Setup
+# Setup
 
 Programming of ESP8266 SoC microcontroller with Arduino IDE is really straightforward. See below how to quickly go up to speed :zap:
+
+
+## Table of Contents
+
+* [What You Need](#what-you-need)
+* [Configure IDE](#configure-ide)
+* [Hook up Your ESP Module](#hook-up-your-esp-module)
+* [Upload Example Sketch](#upload-example-sketch)
+* [Tweaking Your Sketch](#tweaking-your-sketch)
+* [What Do We Do Next?](#what-do-we-do-next?)
 
 
 ## What You Need
