@@ -36,23 +36,23 @@ void executeHumidityControl(void)
   Serial.print(humidity, 1);
   Serial.print("%, set point : ");
   Serial.print(humiditySetPoint, 1);
-  Serial.print("%, humidifyer : ");
+  Serial.print("%, humidifier : ");
   if (humidity > humiditySetPoint + 2)
   {
     // ambient humidity is above the set point
-    // action : switch humidifyer Off
+    // action : switch humidifier Off
     humidifier = LOW;
   }
   else if (humidity < humiditySetPoint - 2)
   {
     // ambient humidity is below the set point
-    // action : switch humidifyer On
+    // action : switch humidifier On
     humidifier = HIGH;
   }
   else
   {
     // ambient humidity is within +/- 2% hysteresis
-    // therefore do not alter curent status of humidifyer
+    // therefore do not alter current status of humidifier
     Serial.print("(No Change) ");
   }
   Serial.println(humidifier == HIGH ? "On" : "Off");
