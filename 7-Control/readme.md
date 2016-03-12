@@ -1,15 +1,9 @@
 # Control
 
-In [previous section](../6-Chart) I have presented how to show your measurements online using Emoncms.org that is powerful web application for logging and visualizing data. We need such data for analysis of performance of our humidity control system. We do not have this system operating yet, but we are just there. In this section I would find a demonstrate how to control our humidifier, so we can then remotely switch it on and off depending on current humidity value. 
-
-To do so you will need the following hardware used in section [Measure](../4-Measure/) and in addition:
-
-* RF433 transmitter
-* RF433 socket
-
 
 ## Table of Contents
 
+* [Introduction](#introduction)
 * [Select RF Socket](#select-rf-socket)
 * [Install Library](#install-library)
 * [Connect Components](#connect-components)
@@ -19,6 +13,16 @@ To do so you will need the following hardware used in section [Measure](../4-Mea
 * [Troubleshooting](#troubleshooting)
 * [Operate the Socket from Web Browser](#operate-the-socket-from-web-browser)
 * [The Next Step - Put it All Together](#the-next-step---put-it-all-together)
+
+
+## Introduction
+
+In [previous section](../6-Chart) I have presented how to show your measurements online using Emoncms.org that is powerful web application for logging and visualizing data. We need such data for analysis of performance of our humidity control system. We do not have this system operating yet, but we are just there. In this section I would find a demonstrate how to control our humidifier, so we can then remotely switch it on and off depending on current humidity value. 
+
+To do so you will need the following hardware used in section [Measure](../4-Measure/) and in addition:
+
+* RF433 transmitter
+* RF433 socket
 
 
 ## Select RF Socket

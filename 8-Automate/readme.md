@@ -1,20 +1,24 @@
 # Automate
 
-Now comes the fun part of joining all the dots we have been discussing and testing in last seven [sections](https://github.com/krzychb/OnlineHumidifier#step-by-step-tutorial). All we need to do now is to write a simple procedure that will compare ambient humidity against set point and switch humidifier on if it is below or on if it is above the set point.
-
-Before you rush to write this procedure think about humidifier being constantly switched on and off for any swing of humidity. To avoid such situation, it is a common practice to add a dead band below and above the set point and do not operate humidifier if ambient humidity is within the dead band. Exactly the same method of control is used in electric iron or in toilet flush. 
-
-The dead band range above and below the set point is called hysteresis. An automatic controller that is working as desribed above is called [bang–bang controler](https://en.wikipedia.org/wiki/Bang%E2%80%93bang_control) or hysteresis controller.
-
 
 ## Table of Contents
 
+* [Introduction](#introduction)
 * [The Hysteresis Controller](#the-hysteresis-controller)
 * [What Else?](#what-else)
 * [Let's Get it Work](#lets-get-it-work)
 * [Auto Mode On](#auto-mode-on)
 * [How does it Perform?](#how-does-it-perform)
 * [Next Step](#next-step)
+
+
+## Introduction
+
+Now comes the fun part of joining all the dots we have been discussing and testing in last seven [sections](https://github.com/krzychb/OnlineHumidifier#step-by-step-tutorial). All we need to do now is to write a simple procedure that will compare ambient humidity against set point and switch humidifier on if it is below or on if it is above the set point.
+
+Before you rush to write this procedure think about humidifier being constantly switched on and off for any swing of humidity. To avoid such situation, it is a common practice to add a dead band below and above the set point and do not operate humidifier if ambient humidity is within the dead band. Exactly the same method of control is used in electric iron or in toilet flush. 
+
+The dead band range above and below the set point is called hysteresis. An automatic controller that is working as desribed above is called [bang–bang controler](https://en.wikipedia.org/wiki/Bang%E2%80%93bang_control) or hysteresis controller.
 
 
 ## The Hysteresis Controller

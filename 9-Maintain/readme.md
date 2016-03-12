@@ -1,19 +1,23 @@
 # Maintain
 
-In [previous section](../8-Automate) we have completed our goal of implementation of automatic humidity control. Now I would like to discuss supplementary topic of making the changes to the sketch in more convenient way. For sure you have several ides how to improve this project by providing better automatic control strategy, more friendly and feature rich user interface or maybe adding additional sensors to monitor conditions in your house.
-
-If you have been working with Arduino UNO board before, you may noticed that compilation and then uploading a sketch to ESP8266 takes a lot of time. This is due to size of compiled sketch that is likely 10x bigger comparing to Arduino UNO. To upload [OnlinHumidifier-Automate.ino](../8-Automate/OnlineHumidifier-Automate) sketch using a serial port takes about 30 seconds. Fortunately we can improve this time if we upload module using Wi-Fi connection rather than a serial port. Such method of module upload is called OTA (Over the Air) and has some additional benefits. You can get rid of USB/serial cable and can perform the update remotely - there is no limitation how far the module is located assuming that it is reachable over Wi-Fi connection.
-
-There are three basic options to perform OTA uploads and they are discussed in in details in [documentation](https://github.com/esp8266/Arduino/blob/master/doc/ota_updates/readme.md#introduction) of [esp8266/Arduino] (https://github.com/esp8266/Arduino) repository. Out of these options I would like to implement uploads directly from [Arduino IDE] (https://github.com/esp8266/Arduino/blob/master/doc/ota_updates/readme.md#arduino-ide).
-
 
 ## Table of Contents
 
+* [Introduction](#introduction)
 * [Preparation](#preparation)
 * [Update the Sketch](#update-the-sketch)
 * [Make First Upload](#make-first-upload)
 * [Make Next Uploads Faster](#make-next-uploads-faster)
 * [Conclusion](#conclusion)
+
+
+## Introduction
+
+In [previous section](../8-Automate) we have completed our goal of implementation of automatic humidity control. Now I would like to discuss supplementary topic of making the changes to the sketch in more convenient way. For sure you have several ides how to improve this project by providing better automatic control strategy, more friendly and feature rich user interface or maybe adding additional sensors to monitor conditions in your house.
+
+If you have been working with Arduino UNO board before, you may noticed that compilation and then uploading a sketch to ESP8266 takes a lot of time. This is due to size of compiled sketch that is likely 10x bigger comparing to Arduino UNO. To upload [OnlinHumidifier-Automate.ino](../8-Automate/OnlineHumidifier-Automate) sketch using a serial port takes about 30 seconds. Fortunately we can improve this time if we upload module using Wi-Fi connection rather than a serial port. Such method of module upload is called OTA (Over the Air) and has some additional benefits. You can get rid of USB/serial cable and can perform the update remotely - there is no limitation how far the module is located assuming that it is reachable over Wi-Fi connection.
+
+There are three basic options to perform OTA uploads and they are discussed in in details in [documentation](https://github.com/esp8266/Arduino/blob/master/doc/ota_updates/readme.md#introduction) of [esp8266/Arduino] (https://github.com/esp8266/Arduino) repository. Out of these options I would like to implement uploads directly from [Arduino IDE] (https://github.com/esp8266/Arduino/blob/master/doc/ota_updates/readme.md#arduino-ide).
 
 
 ## Preparation

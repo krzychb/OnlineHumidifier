@@ -1,14 +1,9 @@
 # Chart
 
-I think that development of applications for ESP8266 has been made really easy to everybody. This is thanks to [ESP8266 core for Arduino](https://github.com/esp8266/Arduino) developed by [Ivan Grokhotkov](https://twitter.com/i_grr) and [esp8266/Arduino](https://github.com/esp8266/Arduino/graphs/contributors) team. In [previous section](../5-Show) I have shown how easy it is to present measurements online with just couple of simple modifications to existing example sketch.
-
-In this section I would like to make another step - push data to the cloud and present them online on a chart. 
-
-![A sample humidity control chart](pictures/humidity-control-chart-1.png)
-
 
 ## Table of Contents
 
+* [Introduction](#introduction)
 * [Emoncms](#emoncms)
 * [Setup](#setup)
 * [Push](#push)
@@ -16,6 +11,15 @@ In this section I would like to make another step - push data to the cloud and p
 * [Save](#save)
 * [Chart](#chart)
 * [Next Steps](#next-steps)
+
+
+## Introduction
+
+I think that development of applications for ESP8266 has been made really easy to everybody. This is thanks to [ESP8266 core for Arduino](https://github.com/esp8266/Arduino) developed by [Ivan Grokhotkov](https://twitter.com/i_grr) and [esp8266/Arduino](https://github.com/esp8266/Arduino/graphs/contributors) team. In [previous section](../5-Show) I have shown how easy it is to present measurements online with just couple of simple modifications to existing example sketch.
+
+In this section I would like to make another step - push data to the cloud and present them online on a chart. 
+
+![A sample humidity control chart](pictures/humidity-control-chart-1.png)
 
 
 ## Emoncms

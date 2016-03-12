@@ -1,20 +1,24 @@
 # Show
 
+
+## Table of Contents
+
+* [Introduction](#introduction)
+* [What You Need](#what-you-need)
+* [Setup Web Server](#setup-web-server)
+* [Test It](#test-it)
+* [Next Step](#next-step)
+
+
+## Introduction
+
 In [previous section](../4-Measure)  I have shown how to use an inexpensive digital humidity sensor DHT22 with ESP8266 to measure relative humidity. We have been displaying humidity values in Serial Monitor of Arduino IDE.
 
 Now it is time to do next step and use ESP’s Wi-Fi functionality and show humidity values in a web browser. I am really excited to show you that, since it provides freedom to get our measurements online and shown them to the whole world!
 
 Such functionality is also fairly easy to complete. There is an example sketch available in Arduino IDE that demonstrates how to set up a simple web server on an ESP. We will use it to serve a web page with humidity measurement that we or anybody else can open in a web browser :sunglasses:
 
-Let us get started!
-
-
-## Table of Contents
-
-* [What You Need](#what-you-need)
-* [Setup Web Server](#setup-web-server)
-* [Test It](#test-it)
-* [Next Step](#next-step)
+Let's get started!
 
 
 ## What You Need
