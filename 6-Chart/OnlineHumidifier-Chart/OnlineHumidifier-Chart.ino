@@ -22,10 +22,13 @@ const char* password = "********";  // your network password
 
 
 //
-// emonCMS configuration
+// Emoncms configuration
 //
-//                       enter your Write API Key below 
-String apiKeyEmoncms = "9a3e3c9cf65c70a597097b065dcb24e3";
+// Domain name of emoncms server - "emoncms.org"
+// If unable to connect with domant name, use IP adress instead - "80.243.190.58"
+const char* emoncmsServer = "emoncms.org";
+//                       enter your Write & Write API Key below 
+String apiKeyEmoncms = "be71f01adf17bfa1a85118923c0140b4";
 WiFiClient client;
 
 

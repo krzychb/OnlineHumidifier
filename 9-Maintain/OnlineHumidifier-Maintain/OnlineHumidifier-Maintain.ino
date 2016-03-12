@@ -10,6 +10,7 @@
 DHT dht(D2, DHT22);
 float humidity;
 float humiditySetPoint = 43;
+// function prototype required by Arduino IDE 1.6.7
 void measureHumidity(void);
 
 
@@ -24,6 +25,7 @@ ActionTransmitter actionTransmitter(RF433_TR_PIN);
 bool humidifier = LOW;
 bool autoMode = false;
 char rcDevice = 'A';
+// function prototype required by Arduino IDE 1.6.7
 void executeHumidityControl(void);
 
 
@@ -50,11 +52,15 @@ const char* host = "OTA-Humidifier";
 
 
 //
-// emonCMS configuration
+// Emoncms configuration
 //
-//                       enter your Write API Key below
+// Domain name of emoncms server - "emoncms.org"
+// If unable to connect with domant name, use IP adress instead - "80.243.190.58"
+const char* emoncmsServer = "emoncms.org";
+//                       enter your Read & Write API Key below 
 String apiKeyEmoncms = "be71f01adf17bfa1a85118923c0140b4";
 WiFiClient client;
+// function prototype required by Arduino IDE 1.6.7
 void sendDataToEmoncms(void);
 
 

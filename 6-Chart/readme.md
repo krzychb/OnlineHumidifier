@@ -75,18 +75,14 @@ You will also need a function to send JSON command to Emoncms and it looks like 
 ```cpp
 void sendDataToEmoncms(void)
 {
-  if (client.connect("emoncms.org", 80))
+  if (client.connect(emoncmsServer, 80))
   {
-    String dataString = "";
-    dataString += "Humidity:";
-    dataString += (String) humidity;
-
-    client.print("GET http://emoncms.org/input/post.json?json={");
-    client.print(dataString);
-    client.print("}&apikey=");
-    client.println(apiKeyEmoncms);
-    client.println("Connection: close");
-    client.println();
+    String getJSON = "";
+    getJSON += "GET http://" + (String) emoncmsServer;
+    getJSON += "/input/post.json?json={Humidity:" + (String) humidity + "}";
+    getJSON += "&apikey=" + apiKeyEmoncms + "\n";
+    getJSON += "Connection: close\n\n";
+    client.print(getJSON);
     // display response from Emoncms
     while (client.available())
     {
@@ -96,7 +92,7 @@ void sendDataToEmoncms(void)
   }
   else
   {
-    Serial.println("Unable to connect to http://emoncms.org");
+    Serial.println("Connection to Emoncms failed");
   }
   client.stop();
 }
@@ -104,7 +100,22 @@ void sendDataToEmoncms(void)
 
 This code opens a new client connection to Emoncms server, sends JSON command, shows received response and finally closes the connection. 
 
-To make this code work we need to declare global variable ``` humidity```, ``` dht ``` and ``` client ``` objects as well provide API key for writing data. 
+To make this code work we need to declare global variable ``` humidity```.
+
+```cpp
+float humidity;
+```
+
+We should also declare a string ```emoncmsServer``` containing domain name of Emoncms, another string with the API key (enter your own!) and declare ``` client ``` object. 
+
+```cpp
+// Domain name of emoncms server - "emoncms.org"
+// If unable to connect with domant name, use IP adress instead - "80.243.190.58"
+const char* emoncmsServer = "emoncms.org";
+// enter your Write & Write API Key below 
+String apiKeyEmoncms = "9a3e3c9cf65c70a597097b065dcb24e3";
+WiFiClient client;
+```
 
 A copy of complete sketch is saved as [OnlineHumidifier-Graph](OnlineHumidifier-Graph/) and consists of three files that contain individual parts of code – initialization, ``` setup() ``` & ``` loop() ```, humidity measurement and sending data to Emoncms. Such code “modularity” will make it easier to follow and understand growing code as we will be adding some more new functionality.
 

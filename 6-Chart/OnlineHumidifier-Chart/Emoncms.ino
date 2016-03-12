@@ -30,18 +30,14 @@
 //
 void sendDataToEmoncms(void)
 {
-  if (client.connect("emoncms.org", 80))
+  if (client.connect(emoncmsServer, 80))
   {
-    String dataString = "";
-    dataString += "Humidity:";
-    dataString += (String) humidity;
-
-    client.print("GET http://emoncms.org/input/post.json?json={");
-    client.print(dataString);
-    client.print("}&apikey=");
-    client.println(apiKeyEmoncms);
-    client.println("Connection: close");
-    client.println();
+    String getJSON = "";
+    getJSON += "GET http://" + (String) emoncmsServer;
+    getJSON += "/input/post.json?json={Humidity:" + (String) humidity + "}";
+    getJSON += "&apikey=" + apiKeyEmoncms + "\n";
+    getJSON += "Connection: close\n\n";
+    client.print(getJSON);
     // display response from Emoncms
     while (client.available())
     {
@@ -51,7 +47,7 @@ void sendDataToEmoncms(void)
   }
   else
   {
-    Serial.println("Unable to connect to http://emoncms.org");
+    Serial.println("Connection to Emoncms failed");
   }
   client.stop();
 }
