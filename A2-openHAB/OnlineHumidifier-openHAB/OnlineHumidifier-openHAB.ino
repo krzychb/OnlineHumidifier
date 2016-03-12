@@ -31,7 +31,7 @@
 DHT dht(D2, DHT22);
 float humidity;
 float humiditySetPoint = 43;
-// function prototypes
+// function prototype required by Arduino IDE 1.6.7
 void measureHumidity(void);
 
 
@@ -46,7 +46,7 @@ ActionTransmitter actionTransmitter(RF433_TR_PIN);
 bool humidifier = LOW;
 bool autoMode = true;
 char rcDevice = 'A';
-// function prototypes
+// function prototype required by Arduino IDE 1.6.7
 void executeHumidityControl(void);
 
 
@@ -60,7 +60,7 @@ void executeHumidityControl(void);
 const char* ssid = "********";     // your network SSID (name)
 const char* password = "********";  // your network password
 ESP8266WebServer server(80);
-// function prototypes
+// function prototypes required by Arduino IDE 1.6.7
 void setupWiFi(void);
 void handleRoot(void);
 void handleNotFound(void);
@@ -74,18 +74,20 @@ void setupWebserver(void);
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h>
 const char* host = "OTA-hygrostat";
-// function prototypes
+// function prototypes required by Arduino IDE 1.6.7
 void setupOTA(void);
 
 
 //
-// Emoncms.org configuration
+// Emoncms configuration
 //
-//                       enter your Write API Key below
-String apiKeyEmoncms = "be71f01adf17bfa1a85118923c0140b4"; // krzychb1 - Study
-//String apiKeyEmoncms = "9a3e3c9cf65c70a597097b065dcb24e3"; // krzychb - Living Room
+// Domain name of emoncms server - "emoncms.org"
+// If unable to connect with domant name, use IP adress instead - "80.243.190.58"
+const char* emoncmsServer = "emoncms.org";
+//                       enter your Read & Write API Key below 
+String apiKeyEmoncms = "be71f01adf17bfa1a85118923c0140b4";
 WiFiClient client;
-// function prototypes
+// function prototypes required by Arduino IDE 1.6.7
 void sendDataToEmoncms(void);
 
 

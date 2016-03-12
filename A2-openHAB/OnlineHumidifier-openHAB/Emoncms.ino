@@ -29,38 +29,32 @@
 // Humidity = Ambient Humidity measured by DHT
 // HumiditySP = Humidity setpoint
 // Humidifier = status of humidifier - on / off
+// AutoMode = status of automatic control - on = auto / off = manual
 //
 void sendDataToEmoncms(void)
 {
-  if (client.connect("emoncms.org", 80))
+  if (client.connect(emoncmsServer, 80))
   {
-    Serial.print("EMONCMS > ");
-    String dataString = "";
-    dataString += "Humidity:";
-    dataString += (String) humidity;
-    dataString += ",HumiditySP:";
-    dataString += (String) humiditySetPoint;
-    dataString += ",Humidifier:";
-    dataString += (String) humidifier;
-    dataString += ",AutoMode:";
-    dataString += (String) autoMode;
-
-    client.print("GET http://emoncms.org/input/post.json?json={");
-    client.print(dataString);
-    client.print("}&apikey=");
-    client.println(apiKeyEmoncms);
-    client.println("Connection: close");
-    client.println();
+    String getJSON = "";
+    getJSON += "GET http://" + (String) emoncmsServer;
+    getJSON += "/input/post.json?json={";
+    getJSON += "Humidity:" + (String) humidity + ",";
+    getJSON += "HumiditySP:" + (String) humiditySetPoint + ",";
+    getJSON += "Humidifier:" + (String) humidifier + ",";
+    getJSON += "AutoMode:" + (String) autoMode;
+    getJSON += "}&apikey=" + apiKeyEmoncms + "\n";
+    getJSON += "Connection: close\n\n";
+    client.print(getJSON);
     // display response from Emoncms
     while (client.available())
     {
       Serial.write(client.read());
     }
-    Serial.println(" - data sent");
+    Serial.println("Data sent to Emoncms");
   }
   else
   {
-    Serial.println("Unable to connect to http://emoncms.org");
+    Serial.println("Connection to Emoncms failed");
   }
   client.stop();
 }

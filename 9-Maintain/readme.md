@@ -20,7 +20,7 @@ There are three basic options to perform OTA uploads and they are discussed in i
 
 To start with please check documentation what are the [basic requirements](https://github.com/esp8266/Arduino/blob/master/doc/ota_updates/readme.md#basic-requirements) for performing OTA. If the module you are using meets these requirements then go to the next step. 
 
-To perform OTA using Arduino IDE you need Arduino IDE 1.6.7 and 2.0.0 version of ESP8266 platform package. Please update your software if you have earlier versions following instructions in chapter [Installing with Boards Manager](https://github.com/esp8266/Arduino#installing-with-boards-manager) under https://github.com/esp8266/Arduino.
+To perform OTA using Arduino IDE you need Arduino IDE **1.6.7** and **2.0.0** or newer version of ESP8266 platform package. Please update your software if you have earlier versions following instructions in chapter [Installing with Boards Manager](https://github.com/esp8266/Arduino#installing-with-boards-manager) under https://github.com/esp8266/Arduino.
 
 Now go to [esp8266/Arduino] (https://github.com/esp8266/Arduino) repository, open [documentation](https://github.com/esp8266/Arduino/blob/master/doc/ota_updates/readme.md#arduino-ide) and follow detailed step by step instructions to practice OTA updates. During this practice you will use *BasicOTA.ino* sketch available in Arduino IDE under *File > Examples > ArduinoOTA*.
 

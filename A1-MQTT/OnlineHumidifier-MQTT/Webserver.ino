@@ -81,6 +81,10 @@ void setupWebserver(void)
 
   server.on("/", handleRoot);
 
+  server.on("/humidifier/", []() {
+    showControlScreen();
+  });
+
   server.on("/humidifier/1", []() {
     autoMode = false;
     humidifier = HIGH;
@@ -111,7 +115,7 @@ void showControlScreen(void)
 {
   String message;
   message += "<html>";
-  message += "<head><meta http-equiv='refresh' content='20'/><title>Online Humidifier</title></head>";
+  message += "<head><meta http-equiv=\"refresh\" content=\"5; url='/humidifier/\"'><title>Online Humidifier</title></head>";
   message += "<body>";
   message += "<h3>Humidifier Control - ";
   message += (String) (autoMode == true ? "Auto" : "Manual");
