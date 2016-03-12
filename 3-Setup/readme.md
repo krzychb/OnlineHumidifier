@@ -24,7 +24,7 @@ To start programming ESP8266 with Arduino IDE you need just three things:
 
 ## Configure IDE
 
-To start with, install Arduino IDE and ESP8266 board support. Please go ahead and follow instructions in chapter [Installing with Boards Manager](https://github.com/esp8266/Arduino#installing-with-boards-manager) under https://github.com/esp8266/Arduino. This project is using **version 2.0.0** of ESP8266 platform package.
+To start with, install Arduino IDE and ESP8266 board support. Please go ahead and follow instructions in chapter [Installing with Boards Manager](https://github.com/esp8266/Arduino#installing-with-boards-manager) under https://github.com/esp8266/Arduino. This project is using Arduino IDE **1.6.5** together with version **2.0.0** of ESP8266 platform package.
  
 Once installation is successfully completed, in Board menu, we will see several ESP8266 boards that are supported by ESP8266 core for Arduino.
 
