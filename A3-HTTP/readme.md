@@ -56,7 +56,7 @@ We will use similar concept and slightly adjust it to provide generic way to han
 
 It turns out that sketch we have developed already has built in functionality to process such URLs. 
 
-Let's get started. Openin recently developed [OnlineHumidifier-openHAB.ino](../A2-openHAB/OnlineHumidifier-openHAB) and save it as *OnlineHumidifier-HTTP.ino*. Compile and upload it to ESP module. 
+Let's get started. Open recently developed [OnlineHumidifier-openHAB.ino](../A2-openHAB/OnlineHumidifier-openHAB) and save it as *OnlineHumidifier-HTTP.ino*. Compile and upload it to ESP module. 
 
 Once module joins network, open web browser and enter ``` http://192.168.1.114/hygrostat?Humidifier=ON ``` (replace ``` 192.168.1.114 ``` with IP of your ESP). 
 You should see result as follows:

@@ -2,7 +2,7 @@
 // https://github.com/krzychb/OnlineHumidifier
 // Part A3 - HTTP
 //
-// place this file in "openhab/configuration/itmes" directory
+// place this file in "openhab/configuration/items" directory
 //
 
 Number Humidity			"Ambient Humidity [%.0f %%]"	<water>		{http="<[http://192.168.1.114/hygrostat:20000:REGEX(.*?Humidity: (.*?)%<br/>Setpoint.*)]"}
