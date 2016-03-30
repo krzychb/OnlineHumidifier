@@ -253,6 +253,8 @@ Switch AutoMode			"Auto Mode"									{http=">[*:GET:http://192.168.1.114/hygros
 
 Again remember to replace ``` 192.168.1.114 ``` with the IP address of your module :smile:. Then upload it to openHAB *configurations/items* directory. The other configuration file, [default.sitemap](openhab/default.sitemap) is exactly the same as we have used [previously](../A2-openHAB#sitemap) setting up MQTT binding.
 
+The last configuration steep is loading org.openhab.binding.http-N.N.N.jar package (where N.N.N is the version number of your openHAB installation) in *addons* folder of your openHAB directory. Loading of such package is required only once when enabling new additional functionality in openHAB.
+
 
 ## Check it in Action
 
