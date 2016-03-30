@@ -55,6 +55,10 @@ Depending on your experience, to make implementation easier, this project is bro
 
 * [**HTTP**](A3-HTTP) - interface ESP8266 and openHAB using HTTP binding. Is it a viable alternative to MQTT binding?
 
+* [**Persistence**](A4-Persistence) - save sensor values on your local PC instead in the cloud using *persistence* functionality provided by openHAB.
+
+**Note:** If you do not have much experience with Arduino IDE programming and ESP8266 please don't skip ahead in sections of this repository! New concepts are introduced step by step and you may miss something that will be important later. As result you may get stuck trying to make the sketch or other applications work.
+
 
 ## Contribute
 

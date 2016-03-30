@@ -1,0 +1,14 @@
+// Control of Humidifier Connected to a RC Socket
+// https://github.com/krzychb/OnlineHumidifier
+// Part A4 - openHAB Persistence
+//
+// place this file in "openhab/configuration/items" directory
+//
+
+Group HumidityChart 	(All)
+Group ControlChart 		(All)
+
+Number Humidity			"Ambient Humidity [%.0f %%]"	<water>		(HumidityChart)	{http="<[http://192.168.1.114/hygrostat:20000:REGEX(.*?Humidity: (.*?)%<br/>Setpoint.*)]"}
+Number HumiditySetPoint	"Humidity Setpoint [%.0f %%]"	<settings>	(HumidityChart)	{http=">[*:GET:http://192.168.1.114/hygrostat?HumiditySetPoint=%2$s] <[http://192.168.1.114/hygrostat:20000:REGEX(.*?Setpoint: (.*?)%<form.*)]"}
+Switch Humidifier		"Humidifier"								(ControlChart)	{http=">[*:GET:http://192.168.1.114/hygrostat?Humidifier=%2$s] <[http://192.168.1.114/hygrostat:20000:REGEX(.*?Humidifier: (.*?), switch .*)]"}
+Switch AutoMode			"Auto Mode"									(ControlChart)	{http=">[*:GET:http://192.168.1.114/hygrostat?AutoMode=%2$s] <[http://192.168.1.114/hygrostat:20000:REGEX(.*?Auto Mode: (.*?), turn .*)]"}

@@ -1,0 +1,16 @@
+// Control of Humidifier Connected to a RC Socket
+// https://github.com/krzychb/OnlineHumidifier
+// Part A4 - openHAB Persistence
+//
+// place this file in "openhab/configuration/persistence" directory
+//
+
+Strategies
+{
+	everyMinute : "0 * * * * ?"
+}
+
+Items
+{
+	Humidity, HumiditySetPoint, Humidifier, AutoMode : strategy = everyChange, everyMinute, restoreOnStartup
+}

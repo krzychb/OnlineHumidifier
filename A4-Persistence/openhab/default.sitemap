@@ -1,0 +1,22 @@
+// Control of Humidifier Connected to a RC Socket
+// https://github.com/krzychb/OnlineHumidifier
+// Part A4 - openHAB Persistence
+//
+// place this file in "openhab/configuration/sitemaps" directory
+//
+
+sitemap default label="Home"
+{
+	Frame label="Hygrostat Control" 
+	{
+		Text item=Humidity
+		Setpoint item=HumiditySetPoint minValue=20 maxValue=80 step=1
+		Switch item=Humidifier
+		Switch item=AutoMode
+	}
+	Frame label="Humidity Control Charts" 
+	{
+		Chart item=HumidityChart period=d refresh=6000
+		Chart item=ControlChart period=d refresh=6000
+	}	
+}
