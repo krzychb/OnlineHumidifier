@@ -1,7 +1,7 @@
 /*
   Control of Humidifier Connected to a RC Socket
   https://github.com/krzychb/OnlineHumidifier
-  Part B1 - http
+  Part A3 - http
 
   Copyright (c) 2015 Krzysztof Budzynski. All rights reserved.
   This file is part of OnlineHumidifier project - https://github.com/krzychb/OnlineHumidifier
