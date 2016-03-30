@@ -35,9 +35,9 @@ In this section I would like to show how to store sensor data using *Persistence
 ## Configure rrd4j
 
 There are three things you need to do to get rrd4j running:
-1. Configure items for saving in rrd4j database 
-2. Configure charts to display items
-3. Install rrd4j binding package 
+  1. Configure items for saving in rrd4j database 
+  2. Configure charts to display items
+  3. Install rrd4j binding package 
 
 More details are provided below
 
@@ -100,7 +100,7 @@ Statement ``` period=d ``` means that chart will show one day worth of data. Ple
 
 ### Install rrd4j Package
 
-The last configuration steep is installation of org.openhab.persistence.rrd4j-N.N.N.jar package (where N.N.N is the version number of your openHAB installation). This package should be placed in *addons* folder like [MQTT](../A2-openHAB) or [HTTP](../A3-HTTP) binding packages discussed previously. This step is done only once to enable rrd4j persistence for your openHAB installation.
+The last configuration steep is installation of org.openhab.persistence.rrd4j-N.N.N.jar package (where N.N.N is the version number of your openHAB installation). This package should be placed in *addons* folder like MQTT or HTTP [binding packages](https://github.com/openhab/openhab/wiki/Bindings) discussed previously. This step is done only once to enable rrd4j persistence for your openHAB installation.
 
 
 ## What About the Sketch?
