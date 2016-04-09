@@ -88,6 +88,7 @@ Software for this project has been prepared thanks to great work of the followin
 * [Randy Simons](http://randysimons.nl/88,over-mij/) who prepared [433MHz libraries for Arduino](http://randysimons.nl/26-433mhz-libraries-for-arduino)
 * [Friends-of-Fritzing](http://friends.fritzing.org/) foundation - developer of widely used and really nice and friendly [Fritzing](http://fritzing.org/home/) 
 * [Kamil Baczkowicz]( https://github.com/kamilfb) - the author of versatile and really user friendly [mqtt-spy]( http://kamilfb.github.io/mqtt-spy/), an application that provides tremendous help when testing MQTT communication and debugging MQTT messages
+* [Imroy](https://github.com/Imroy) - developer of [PubSubClient](https://github.com/Imroy/pubsubclient), a MQTT library fork of https://github.com/knolleary/pubsubclient
 
 
 ## License
