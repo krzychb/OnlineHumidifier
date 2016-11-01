@@ -26,7 +26,11 @@ In this section I would like to make another step - push data to the cloud and p
 
 There are several cloud services that you can use for such purpose. I am pretty familiar with [ThingSpeak](https://thingspeak.com/) and [Emoncms](http://emoncms.org/) and will refer to them.
 
-For this particular project I propose to use [Emoncms](http://emoncms.org/). I have selected it because it allows displaying several values on one chart as opposed to [ThingSpeak](https://thingspeak.com/) that let you show only a single value per chart. After putting our automatic humidity control into operation we would like to be able to analyse its performance. We will do it by checking relationship between humidity set point, actual humidity value and on/off status of humidifier. It is easier to do it on a single chart rather than on three separate charts. 
+For this particular project I propose to use [Emoncms](http://emoncms.org/). I found it easier to configure a chart to show multiple values, that you can quickly browse or zoom for the period you want. 
+
+After putting our automatic humidity control into operation we would like to be able to analyse its performance. We will do it by checking relationship between humidity set point, actual humidity value and on/off status of humidifier. It is easier to do it on a single chart rather than on three separate charts. 
+
+On the other hand I can recommend [ThingSpeak](https://thingspeak.com/) if you need flexibility of extra data processing before displaying. ThinkSpeeak provides MATLAB for that and imagine what fancy things you can do with it! After processing you can then display the data using huge [charts or plots](https://www.mathworks.com/products/matlab/plot-gallery.html?refresh=true) gallery.
 
 
 ## Setup
