@@ -45,6 +45,7 @@ To learn how to send data to Emoncms, login into it, go to *Setup > Inputs* and 
 
 You will find your API keys at the top of API Hep page. To post data use “Read & Write” key.
 
+**Note:** Formal description of JSON is provided in [RFC 7159](https://tools.ietf.org/html/rfc7159) standard. According to this standard, the name (as a string) should begin and end with quotation marks. This is not the case in example above, as `power` is not enclosed in quotation marks. Keep in mind, that even if it works for Emoncms, it may not work elsewhere. 
 
 ## Push
 
